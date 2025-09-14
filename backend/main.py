@@ -196,5 +196,10 @@ async def get_price_history(product_id: int, db: Session = Depends(get_db)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    
+    # Get port from environment variable (Railway sets this)
+    port = int(os.environ.get("PORT", 8000))
+    
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
