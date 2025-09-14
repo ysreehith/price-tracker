@@ -22,6 +22,7 @@ app.add_middleware(
         "http://localhost:3000",  # React dev server
         "https://*.vercel.app",   # Vercel deployments
         "https://*.railway.app",  # Railway deployments
+        "*"  # Allow all origins for now (temporary)
     ],
     allow_credentials=True,
     allow_methods=["*"],
